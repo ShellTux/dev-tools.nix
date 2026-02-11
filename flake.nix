@@ -20,12 +20,30 @@
           inputs',
           pkgs,
           system,
+          lib,
           ...
         }:
+        let
+          inherit (pkgs) mkShell;
+          inherit (lib) getExe;
+
+          onefetch = getExe pkgs.onefetch;
+        in
         {
           imports = [
             ./pkgs
           ];
+
+          devShells.default = mkShell {
+            name = "dev-tools.nix";
+
+            packages = [ ];
+
+            shellHook = ''
+              echo 'Installing pre-commit hooks...'
+              ${onefetch} --no-bots
+            '';
+          };
         };
     };
 

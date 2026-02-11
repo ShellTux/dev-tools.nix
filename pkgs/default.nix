@@ -24,5 +24,6 @@ in
     neovim = nixvim;
     nixvim = nixvim'.makeNixvimWithModule nixvimModule;
     nvim = nixvim;
+    vim = callPackage ./vim { };
   };
 }

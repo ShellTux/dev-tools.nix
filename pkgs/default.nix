@@ -21,6 +21,7 @@ in
   packages = rec {
     bat = callPackage ./bat { };
     default = pkgs.hello;
+    kitty = callPackage ./kitty { };
     neovim = nixvim;
     nixvim = nixvim'.makeNixvimWithModule nixvimModule;
     nvim = nixvim;

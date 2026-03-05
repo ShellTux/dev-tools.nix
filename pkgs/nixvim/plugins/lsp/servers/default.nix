@@ -2,7 +2,6 @@
 {
   imports = [
     ./hls
-    ./jdtls
     ./nil_ls
     ./rust_analyzer
     ./tinymist
@@ -24,7 +23,6 @@
     hls.enable = true;
     html.enable = true;
     hyprls.enable = true;
-    jdtls.enable = true;
     jsonls.enable = true;
     lua_ls.enable = true;
     marksman.enable = true;
